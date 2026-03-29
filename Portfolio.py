@@ -12,44 +12,34 @@ st.set_page_config(
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
-
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html, body, [data-testid="stAppViewContainer"] {
     background: #080810 !important;
     color: #e8e8f0 !important;
     font-family: 'Syne', sans-serif !important;
 }
-
 [data-testid="stAppViewContainer"] {
     background:
         radial-gradient(ellipse 80% 50% at 20% -10%, rgba(99,60,255,0.18) 0%, transparent 60%),
         radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,200,180,0.10) 0%, transparent 60%),
         #080810 !important;
 }
-
 [data-testid="stHeader"],
 [data-testid="stToolbar"],
 footer,
 #MainMenu { display: none !important; }
-
 [data-testid="stVerticalBlock"] { gap: 0 !important; }
-
 section.main > div { padding: 0 !important; }
-
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #080810; }
 ::-webkit-scrollbar-thumb { background: #633cff; border-radius: 2px; }
-
 /* ── Typography ── */
 h1, h2, h3, h4 { font-family: 'Syne', sans-serif !important; }
 code, pre { font-family: 'Space Mono', monospace !important; }
-
 /* ── Divider ── */
 hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; margin: 0 !important; }
-
 /* ── Nav ── */
 .nav-wrap {
     position: sticky; top: 0; z-index: 100;
@@ -72,7 +62,6 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     text-decoration: none; transition: color 0.2s;
 }
 .nav-links a:hover { color: #00c8b4; }
-
 /* ── Hero ── */
 .hero-wrap {
     min-height: 92vh;
@@ -88,7 +77,27 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
 }
-.hero-content { position: relative; z-index: 1; max-width: 780px; }
+.hero-inner {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 4rem; width: 100%;
+}
+.hero-content { flex: 1; max-width: 680px; }
+.hero-image-col {
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+}
+.hero-image-col img {
+    width: 320px; height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(99,60,255,0.5);
+    box-shadow: 0 0 0 8px rgba(99,60,255,0.08), 0 0 60px rgba(99,60,255,0.2);
+}
+@media (max-width: 768px) {
+    .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+    .hero-image-col img { width: 200px; height: 200px; }
+}
 .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
     font-family: 'Space Mono', monospace;
@@ -101,7 +110,6 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
 }
 .hero-tag::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-
 .hero-name {
     font-size: clamp(3.5rem, 8vw, 6.5rem);
     font-weight: 800; line-height: 0.95;
@@ -143,11 +151,9 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     border: 1px solid rgba(232,232,240,0.2);
 }
 .btn-ghost:hover { border-color: #00c8b4; color: #00c8b4; transform: translateY(-2px); }
-
 /* ── Section Wrappers ── */
 .section-wrap { padding: 5rem 3rem; }
 .section-wrap-alt { padding: 5rem 3rem; background: rgba(255,255,255,0.018); }
-
 .section-label {
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
@@ -162,7 +168,6 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     font-size: 1rem; color: rgba(232,232,240,0.55);
     max-width: 520px; line-height: 1.7; margin-bottom: 3rem;
 }
-
 /* ── Stats Row ── */
 .stats-row {
     display: flex; gap: 2rem; flex-wrap: wrap;
@@ -182,7 +187,6 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     letter-spacing: 0.1em; text-transform: uppercase;
     margin-top: 0.25rem;
 }
-
 /* ── Project Cards ── */
 .projects-grid {
     display: grid;
@@ -195,6 +199,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     border-radius: 16px; padding: 2rem;
     transition: all 0.3s; cursor: default;
     position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
 }
 .project-card::before {
     content: '';
@@ -209,7 +214,6 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 .project-card:hover::before { opacity: 1; }
-
 .project-icon {
     font-size: 2rem; margin-bottom: 1.25rem;
     display: block;
@@ -232,7 +236,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     border: 1px solid rgba(99,60,255,0.25);
     color: rgba(200,190,255,0.85);
 }
-.feature-list { list-style: none; padding: 0; }
+.feature-list { list-style: none; padding: 0; flex-grow: 1; }
 .feature-list li {
     font-size: 0.82rem; color: rgba(232,232,240,0.5);
     padding: 0.2rem 0; padding-left: 1rem;
@@ -242,7 +246,17 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     content: '→'; position: absolute; left: 0;
     color: #00c8b4; font-size: 0.7rem;
 }
-
+.card-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+    color: #633cff; text-decoration: none;
+    border: 1px solid rgba(99,60,255,0.3);
+    border-radius: 6px; padding: 0.35rem 0.85rem;
+    background: rgba(99,60,255,0.08);
+    transition: all 0.2s; align-self: flex-start;
+}
+.card-link:hover { background: rgba(99,60,255,0.2); color: #fff; border-color: #633cff; }
 /* ── Skills ── */
 .skills-grid {
     display: grid;
@@ -268,40 +282,18 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     border: 1px solid rgba(255,255,255,0.1);
     color: rgba(232,232,240,0.75);
 }
-
 /* ── Contact ── */
 .contact-card {
     max-width: 640px; margin: 0 auto; text-align: center;
 }
-.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+.contact-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
 .contact-link {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    padding: 0.75rem 1.5rem; border-radius: 10px;
-    font-weight: 700; font-size: 0.85rem;
-    text-decoration: none; transition: all 0.2s;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(232,232,240,0.8);
-    background: rgba(255,255,255,0.03);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 1rem; font-weight: 600;
+    text-decoration: none; color: rgba(232,232,240,0.7);
+    transition: color 0.2s;
 }
-.card-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    margin-top: 1.25rem;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
-    color: #633cff; text-decoration: none;
-    border: 1px solid rgba(99,60,255,0.3);
-    border-radius: 6px; padding: 0.35rem 0.85rem;
-    background: rgba(99,60,255,0.08);
-    transition: all 0.2s;
-}
-.card-link:hover { background: rgba(99,60,255,0.2); color: #fff; border-color: #633cff; }
-/* ── Skills ── */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1rem;
-}
-.contact-link:hover { border-color: #633cff; color: #fff; background: rgba(99,60,255,0.12); transform: translateY(-2px); }
-
+.contact-link:hover { color: #00c8b4; }
 /* ── Footer ── */
 .footer {
     padding: 2rem 3rem;
@@ -318,10 +310,12 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     font-size: 0.72rem; color: rgba(232,232,240,0.3);
 }
 .footer-made span { color: #633cff; }
-
 /* ── Streamlit overrides ── */
 .stMarkdown p { margin: 0 !important; }
 div[data-testid="column"] { padding: 0 !important; }
+a:link {
+    text-decoration: none;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -331,7 +325,7 @@ div[data-testid="column"] { padding: 0 !important; }
 # ══════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="nav-wrap">
-    <div class="nav-logo">AK</div>
+    <div class="nav-logo">AK.dev</div>
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -345,70 +339,67 @@ st.markdown("""
 # ══════════════════════════════════════════════════════════════
 # HERO
 # ══════════════════════════════════════════════════════════════
-st.markdown("""
+# ── Image uploader (hidden in sidebar) ───────────────────────
+PROFILE_IMAGE = "profile.jpg"  # put your image in the same folder as portfolio.py
+ 
+import base64, os
+def get_img_base64(path):
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            data = base64.b64encode(f.read()).decode()
+        ext = path.rsplit(".", 1)[-1].lower().replace("jpg", "jpeg")
+        return f"data:image/{ext};base64,{data}"
+    return None
+ 
+img_src = get_img_base64(PROFILE_IMAGE)
+ 
+if img_src:
+    img_html = f'<div class="hero-image-col"><img src="{img_src}" alt="Ankit Kumar"></div>'
+else:
+    img_html = '''<div class="hero-image-col">
+        <div style="width:320px;height:320px;border-radius:50%;
+            border:3px dashed rgba(99,60,255,0.4);
+            background:rgba(99,60,255,0.07);
+            display:flex;flex-direction:column;align-items:center;justify-content:center;
+            box-shadow:0 0 0 8px rgba(99,60,255,0.06),0 0 60px rgba(99,60,255,0.15);">
+            <span style="font-size:3rem;">👤</span>
+            <span style="font-size:0.72rem;color:rgba(232,232,240,0.35);margin-top:0.75rem;
+                font-family:Space Mono,monospace;letter-spacing:0.08em;text-align:center;">
+                Place your image as<br><b style="color:rgba(99,60,255,0.8);">profile.jpg</b><br>next to portfolio.py
+            </span>
+        </div>
+    </div>'''
+ 
+st.markdown(f"""
 <div class="hero-wrap">
     <div class="hero-grid-bg"></div>
-    <div class="hero-content">
-        <div class="hero-tag">Available for projects</div>
-        <div class="hero-name">ANKIT<br>KUMAR</div>
-        <div class="hero-role">Developer & Builder</div>
-        <p class="hero-desc">
-            I build things that are genuinely useful &mdash; from AI-powered tools and
-            computer vision systems to games and custom browser experiences.
-            I turn ideas into working software.
-        </p>
-        <div class="hero-cta-row">
-            <a class="btn-primary" href="#projects">View Projects ↓</a>
-            <a class="btn-ghost" href="#contact">Get in Touch</a>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-tag">Available for projects</div>
+            <div class="hero-name">Ankit<br>Kumar</div>
+            <div class="hero-role">Developer &amp; Builder</div>
+            <p class="hero-desc">
+                I build things that are genuinely useful &mdash; from AI-powered tools and
+                computer vision systems to games and custom browser experiences.
+                I turn ideas into working software.
+            </p>
+            <div class="hero-cta-row">
+                <a class="btn-primary" href="#projects">View Projects ↓</a>
+                <a class="btn-ghost" href="#contact">Get in Touch</a>
+            </div>
         </div>
+        {img_html}
     </div>
 </div>
 """, unsafe_allow_html=True)
-
+ 
 st.markdown("<hr>", unsafe_allow_html=True)
 
 
 # ══════════════════════════════════════════════════════════════
 # ABOUT
 # ══════════════════════════════════════════════════════════════
-st.markdown('<div id="about"></div>', unsafe_allow_html=True)
-st.markdown("""
-<div class="section-wrap">
-    <div class="section-label">// About Me</div>
-    <div class="section-title">Who I Am</div>
-    <p class="section-sub">
-        I&#39;m a self-driven developer passionate about building creative, real-world projects. 
-        I love combining machine learning, computer vision, and clean UI to create 
-        software that actually works and feels great to use.
-    </p>
-    <p style="font-size:1rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">
-        My projects span multiple domains &mdash; desktop GUI apps in C and Python,
-        AI-powered document tools, real-time gesture controllers, face recognition
-        security systems, and polished web games. I&#39;m always learning, always building.
-        <br><br>
-        When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires
-        creative thinking.
-    </p>
-    <div class="stats-row">
-        <div class="stat-item">
-            <div class="stat-num">7+</div>
-            <div class="stat-label">Projects Built</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">5+</div>
-            <div class="stat-label">Languages Used</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">3</div>
-            <div class="stat-label">AI/ML Projects</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-num">&infin;</div>
-            <div class="stat-label">Ideas in Progress</div>
-        </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+st.markdown('<div id="about"></div><div class="section-wrap"><div class="section-label">// About Me</div><div class="section-title">Who I Am</div><p class="section-sub">I&#39;m a self-driven developer passionate about building creative, real-world projects. I love combining machine learning, computer vision, and clean UI to create software that actually works and feels great to use.</p><p style="font-size:1rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">My projects span multiple domains &mdash; desktop GUI apps in C and Python, AI-powered document tools, real-time gesture controllers, face recognition security systems, and polished web games. I&#39;m always learning, always building.<br><br>When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires creative thinking.</p><div class="stats-row"><div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Projects Built</div></div><div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">Languages Used</div></div><div class="stat-item"><div class="stat-num">3</div><div class="stat-label">AI/ML Projects</div></div><div class="stat-item"><div class="stat-num">&#8734;</div><div class="stat-label">Ideas in Progress</div></div></div></div>', unsafe_allow_html=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -443,7 +434,7 @@ st.markdown("""
         </div>
         <div class="project-card" style="--accent:#00c8b4">
             <span class="project-icon">📄</span>
-            <div class="project-title">DocMind AI &mdash; RAG Q&A</div>
+            <div class="project-title">DocMind AI &mdash; RAG Q&amp;A</div>
             <p class="project-desc">Upload any document and ask questions about it. Fully local, privacy-first RAG pipeline.</p>
             <div class="tag-row">
                 <span class="tag">Python</span>
@@ -456,9 +447,9 @@ st.markdown("""
                 <li>Supports PDF, DOCX, TXT, CSV, Markdown</li>
                 <li>Hot-swappable LLM models (llama3, mistral...)</li>
                 <li>Source attribution on every answer</li>
-                <li>Adjustable chunking & retrieval settings</li>
+                <li>Adjustable chunking &amp; retrieval settings</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/DocuMind_AI" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
         <div class="project-card" style="--accent:#ff5470">
             <span class="project-icon">🛡️</span>
@@ -476,7 +467,7 @@ st.markdown("""
                 <li>Timestamped access log viewer</li>
                 <li>Dark-themed professional GUI</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/FaceRecognitionSystem" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
         <div class="project-card" style="--accent:#f5a623">
             <span class="project-icon">🧩</span>
@@ -492,9 +483,9 @@ st.markdown("""
                 <li>Trie data structure for fast word lookup</li>
                 <li>Teacher / Student role-based UI</li>
                 <li>Dynamic crossword grid generation</li>
-                <li>Persistent word & hint database</li>
+                <li>Persistent word &amp; hint database</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/CrossWord" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
         <div class="project-card" style="--accent:#633cff">
             <span class="project-icon">🎙️</span>
@@ -508,11 +499,11 @@ st.markdown("""
             </div>
             <ul class="feature-list">
                 <li>Google STT + offline pyttsx3 TTS</li>
-                <li>Continuous & single-shot listening modes</li>
+                <li>Continuous &amp; single-shot listening modes</li>
                 <li>Ambient noise calibration</li>
                 <li>Female voice preference selection</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/VoiceAssistant" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
         <div class="project-card" style="--accent:#00c8b4">
             <span class="project-icon">🔢</span>
@@ -526,10 +517,10 @@ st.markdown("""
             <ul class="feature-list">
                 <li>3 difficulty levels with backtracking generator</li>
                 <li>Dark / light mode toggle</li>
-                <li>Save & continue via localStorage</li>
+                <li>Save &amp; continue via localStorage</li>
                 <li>Animated cell error highlighting</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/Sudoku" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
         <div class="project-card" style="--accent:#ff5470">
             <span class="project-icon">🌐</span>
@@ -546,7 +537,7 @@ st.markdown("""
                 <li>Quick-access shortcut tile grid</li>
                 <li>Slide-out sidebar with Google apps</li>
             </ul>
-            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
+            <a href="https://github.com/Kenk26/HomePage" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
     </div>
 </div>
@@ -640,7 +631,7 @@ st.markdown("""
             <a class="contact-link" href="https://www.instagram.com/_.ken_k_/" target="_blank">
                 📸 Instagram
             </a>
-            <a class="contact-link" href="https://discord.gg/QzeZ3haT" target="_blank">
+            <a class="contact-link" href="https://discord.com/invite/QzeZ3haT" target="_blank">
                 💬 Discord
             </a>
             <a class="contact-link" href="https://www.facebook.com/profile.php?id=100014608938403" target="_blank">
@@ -659,7 +650,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ══════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="footer">
-    <div class="footer-copy">© 2025 Karan Singh. All rights reserved.</div>
+    <div class="footer-copy">&#169; 2025 Ankit Kumar. All rights reserved.</div>
     <div class="footer-made">Built with <span>♥</span> using Streamlit & Python</div>
 </div>
 """, unsafe_allow_html=True)
