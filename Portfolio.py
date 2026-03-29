@@ -323,9 +323,25 @@ a:link {
 # ══════════════════════════════════════════════════════════════
 # NAV
 # ══════════════════════════════════════════════════════════════
-st.markdown("""
+
+# ── Set your logo image path here ────────────────────────────
+LOGO_IMAGE = "logo.png"  # place logo.png next to portfolio.py
+
+import base64, os
+def get_img_base64(path):
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            data = base64.b64encode(f.read()).decode()
+        ext = path.rsplit(".", 1)[-1].lower().replace("jpg", "jpeg")
+        return f"data:image/{ext};base64,{data}"
+    return None
+
+logo_src = get_img_base64(LOGO_IMAGE)
+logo_html = f'<img src="{logo_src}" alt="Logo" style="height:38px;object-fit:contain;border-radius:50%;">' if logo_src else '<span class="nav-logo">AK.dev</span>'
+
+st.markdown(f"""
 <div class="nav-wrap">
-    <div class="nav-logo">AK.dev</div>
+    <div class="nav-logo">{logo_html}</div>
     <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -341,8 +357,7 @@ st.markdown("""
 # ══════════════════════════════════════════════════════════════
 # ── Image uploader (hidden in sidebar) ───────────────────────
 PROFILE_IMAGE = "profile.jpg"  # put your image in the same folder as portfolio.py
- 
-import base64, os
+
 def get_img_base64(path):
     if os.path.exists(path):
         with open(path, "rb") as f:
