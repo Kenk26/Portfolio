@@ -283,6 +283,23 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     color: rgba(232,232,240,0.8);
     background: rgba(255,255,255,0.03);
 }
+.card-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
+    color: #633cff; text-decoration: none;
+    border: 1px solid rgba(99,60,255,0.3);
+    border-radius: 6px; padding: 0.35rem 0.85rem;
+    background: rgba(99,60,255,0.08);
+    transition: all 0.2s;
+}
+.card-link:hover { background: rgba(99,60,255,0.2); color: #fff; border-color: #633cff; }
+/* ── Skills ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
 .contact-link:hover { border-color: #633cff; color: #fff; background: rgba(99,60,255,0.12); transform: translateY(-2px); }
 
 /* ── Footer ── */
@@ -372,7 +389,6 @@ st.markdown("""
         When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires
         creative thinking.
     </p>
-
     <div class="stats-row">
         <div class="stat-item">
             <div class="stat-num">7+</div>
@@ -406,9 +422,7 @@ st.markdown("""
     <div class="section-label">// Projects</div>
     <div class="section-title">What I&#39;ve Built</div>
     <p class="section-sub">A collection of projects across AI, computer vision, games, and web.</p>
-
     <div class="projects-grid">
-
         <div class="project-card" style="--accent:#633cff">
             <span class="project-icon">🖐️</span>
             <div class="project-title">Hand Gesture Mouse Controller</div>
@@ -425,8 +439,8 @@ st.markdown("""
                 <li>Move, click, scroll, drag &mdash; all hands-free</li>
                 <li>Full data collection + training pipeline</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#00c8b4">
             <span class="project-icon">📄</span>
             <div class="project-title">DocMind AI &mdash; RAG Q&A</div>
@@ -444,8 +458,8 @@ st.markdown("""
                 <li>Source attribution on every answer</li>
                 <li>Adjustable chunking & retrieval settings</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#ff5470">
             <span class="project-icon">🛡️</span>
             <div class="project-title">Face Recognition Security</div>
@@ -462,8 +476,8 @@ st.markdown("""
                 <li>Timestamped access log viewer</li>
                 <li>Dark-themed professional GUI</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#f5a623">
             <span class="project-icon">🧩</span>
             <div class="project-title">Crossword Puzzle Game</div>
@@ -480,8 +494,8 @@ st.markdown("""
                 <li>Dynamic crossword grid generation</li>
                 <li>Persistent word & hint database</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#633cff">
             <span class="project-icon">🎙️</span>
             <div class="project-title">Voice Assistant</div>
@@ -498,8 +512,8 @@ st.markdown("""
                 <li>Ambient noise calibration</li>
                 <li>Female voice preference selection</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#00c8b4">
             <span class="project-icon">🔢</span>
             <div class="project-title">Sudoku Game</div>
@@ -515,8 +529,8 @@ st.markdown("""
                 <li>Save & continue via localStorage</li>
                 <li>Animated cell error highlighting</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
         <div class="project-card" style="--accent:#ff5470">
             <span class="project-icon">🌐</span>
             <div class="project-title">Custom New Tab Page</div>
@@ -532,8 +546,8 @@ st.markdown("""
                 <li>Quick-access shortcut tile grid</li>
                 <li>Slide-out sidebar with Google apps</li>
             </ul>
+            <a href="https://github.com/Kenk26/HandGestureSystemControl.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -550,7 +564,6 @@ st.markdown("""
     <div class="section-label">// Skills & Stack</div>
     <div class="section-title">Tools I Work With</div>
     <p class="section-sub">Technologies I use to build things from scratch.</p>
-
     <div class="skills-grid">
         <div class="skill-category">
             <div class="skill-cat-title">Languages</div>
