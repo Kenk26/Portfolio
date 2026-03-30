@@ -665,7 +665,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ══════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="footer">
-    <div class="footer-copy">&#169; 2025 Ankit Kumar. All rights reserved.</div>
+    <div class="footer-copy">&#169;😉Ankit Kumar.</div>
     <div class="footer-made">Built with <span>♥</span> using Streamlit & Python</div>
 </div>
 """, unsafe_allow_html=True)
