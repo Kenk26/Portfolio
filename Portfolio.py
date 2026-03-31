@@ -665,7 +665,7 @@ st.markdown("""
                 👤 LinkedIn
             </a>
             <a class="contact-link" href="mailto:ankitmukesh2003@gmail.com" target="_blank">
-                ✉️ Main Me
+                ✉️ Send Mail
             </a>
         </div>
     </div>
