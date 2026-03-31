@@ -649,7 +649,7 @@ st.markdown("""
             <a class="contact-link" href="https://discord.com/invite/QzeZ3haT" target="_blank">
                 💬 Discord
             </a>
-            <a class="contact-link" href="www.linkedin.com/in/ankit-kumar-10o26" target="_blank">
+            <a class="contact-link" href="https://www.linkedin.com/in/ankit-kumar-10o26/" target="_blank">
                 👤 LinkedIn
             </a>
         </div>
