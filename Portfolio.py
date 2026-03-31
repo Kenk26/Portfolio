@@ -126,7 +126,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     margin-bottom: 1.5rem;
 }
 .hero-desc {
-    font-size: 1.05rem; line-height: 1.75;
+    font-size: 1.2rem !important; line-height: 1.75;
     color: rgba(232,232,240,0.65); max-width: 560px;
     margin-bottom: 2.5rem;
 }
@@ -165,7 +165,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     color: #fff; margin-bottom: 1rem;
 }
 .section-sub {
-    font-size: 1rem; color: rgba(232,232,240,0.55);
+    font-size: 1.2rem !important; color: rgba(232,232,240,0.55);
     max-width: 520px; line-height: 1.7; margin-bottom: 3rem;
 }
 /* ── Stats Row ── */
@@ -223,7 +223,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     color: #fff; margin-bottom: 0.5rem;
 }
 .project-desc {
-    font-size: 0.88rem; line-height: 1.7;
+    font-size: 0.9rem !important; line-height: 1.7;
     color: rgba(232,232,240,0.55);
     margin-bottom: 1.25rem;
 }
@@ -238,7 +238,7 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
 }
 .feature-list { list-style: none; padding: 0; flex-grow: 1; }
 .feature-list li {
-    font-size: 0.82rem; color: rgba(232,232,240,0.5);
+    font-size: 0.9rem; color: rgba(232,232,240,0.5);
     padding: 0.2rem 0; padding-left: 1rem;
     position: relative;
 }
@@ -414,7 +414,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ══════════════════════════════════════════════════════════════
 # ABOUT
 # ══════════════════════════════════════════════════════════════
-st.markdown('<div id="about"></div><div class="section-wrap"><div class="section-label">// About Me</div><div class="section-title">Who I Am</div><p class="section-sub">I&#39;m a self-driven developer passionate about building creative, real-world projects. I love combining machine learning, computer vision, and clean UI to create software that actually works and feels great to use.</p><p style="font-size:1rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">My projects span multiple domains &mdash; desktop GUI apps in C and Python, AI-powered document tools, real-time gesture controllers, face recognition security systems, and polished web games. I&#39;m always learning, always building.<br><br>When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires creative thinking.</p><div class="stats-row"><div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Projects Built</div></div><div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">Languages Used</div></div><div class="stat-item"><div class="stat-num">3</div><div class="stat-label">AI/ML Projects</div></div><div class="stat-item"><div class="stat-num">&#8734;</div><div class="stat-label">Ideas in Progress</div></div></div></div>', unsafe_allow_html=True)
+st.markdown('<div id="about"></div><div class="section-wrap"><div class="section-label">// About Me</div><div class="section-title">Who I Am</div><p class="section-sub">I&#39;m a self-driven developer passionate about building creative, real-world projects. I love combining machine learning, computer vision, and clean UI to create software that actually works and feels great to use.</p><p style="font-size:1.2rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">My projects span multiple domains &mdash; desktop GUI apps in C and Python, AI-powered document tools, real-time gesture controllers, face recognition security systems, and polished web games. I&#39;m always learning, always building.<br><br>When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires creative thinking.</p><div class="stats-row"><div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Projects Built</div></div><div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">Languages Used</div></div><div class="stat-item"><div class="stat-num">3</div><div class="stat-label">AI/ML Projects</div></div><div class="stat-item"><div class="stat-num">&#8734;</div><div class="stat-label">Ideas in Progress</div></div></div></div>', unsafe_allow_html=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
