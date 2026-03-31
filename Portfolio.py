@@ -310,6 +310,18 @@ hr { border: none; border-top: 1px solid rgba(255,255,255,0.07) !important; marg
     font-size: 0.72rem; color: rgba(232,232,240,0.3);
 }
 .footer-made span { color: #633cff; }
+/* ── Mobile ── */
+@media (max-width: 768px) {
+    .section-wrap, .section-wrap-alt { padding: 3rem 1.25rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card { width: 100%; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .stats-row { justify-content: center; text-align: center; }
+    .footer { flex-direction: column; align-items: center; text-align: center; padding: 1.5rem; }
+    .nav-wrap { padding: 0 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.68rem; }
+}
 /* ── Streamlit overrides ── */
 .stMarkdown p { margin: 0 !important; }
 div[data-testid="column"] { padding: 0 !important; }
