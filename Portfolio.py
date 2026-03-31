@@ -652,6 +652,9 @@ st.markdown("""
             <a class="contact-link" href="https://www.linkedin.com/in/ankit-kumar-10o26/" target="_blank">
                 👤 LinkedIn
             </a>
+            <a class="contact-link" href="mailto:ankitmukesh2003@gmail.com" target="_blank">
+                ✉️ Main Me
+            </a>
         </div>
     </div>
 </div>
