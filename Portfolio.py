@@ -399,7 +399,7 @@ st.markdown(f"""
                 I turn ideas into working software.
             </p>
             <div class="hero-cta-row">
-                <a class="btn-primary" href="#projects">View Projects ↓</a>
+                <a class="btn-primary" href="https://github.com/Kenk26">View GitHUB</a>
                 <a class="btn-ghost" href="#contact">Get in Touch</a>
             </div>
         </div>
