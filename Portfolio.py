@@ -552,13 +552,15 @@ st.markdown("""
         <div class="project-card" style="--accent:#ff5470">
             <span class="project-icon">🌐</span>
             <div class="project-title">Custom New Tab Page</div>
-            <p class="project-desc">A personal browser dashboard with a video background, live clock, and animated sidebar.</p>
+            <p class="project-desc">A personal browser dashboard with video background, live clock, animated sidebar, and Trie-powered search autocomplete.</p>
             <div class="tag-row">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">Trie / DSA</span>
             </div>
             <ul class="feature-list">
+                <li>Trie-based search autocomplete with 400+ seeded queries</li>
                 <li>Animated video background</li>
                 <li>Live digital clock with date</li>
                 <li>Quick-access shortcut tile grid</li>
