@@ -426,7 +426,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # ══════════════════════════════════════════════════════════════
 # ABOUT
 # ══════════════════════════════════════════════════════════════
-st.markdown('<div id="about"></div><div class="section-wrap"><div class="section-label">// About Me</div><div class="section-title">Who I Am</div><p class="section-sub">I&#39;m a self-driven developer passionate about building creative, real-world projects. I love combining machine learning, computer vision, and clean UI to create software that actually works and feels great to use.</p><p style="font-size:1.2rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">My projects span multiple domains &mdash; desktop GUI apps in C and Python, AI-powered document tools, real-time gesture controllers, face recognition security systems, and polished web games. I&#39;m always learning, always building.<br><br>When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires creative thinking.</p><div class="stats-row"><div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Projects Built</div></div><div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">Languages Used</div></div><div class="stat-item"><div class="stat-num">3</div><div class="stat-label">AI/ML Projects</div></div><div class="stat-item"><div class="stat-num">&#8734;</div><div class="stat-label">Ideas in Progress</div></div></div></div>', unsafe_allow_html=True)
+st.markdown('<div id="about"></div><div class="section-wrap"><div class="section-label">// About Me</div><div class="section-title">Who I Am</div><p class="section-sub">I&#39;m a self-driven developer passionate about building creative, real-world projects. I love combining machine learning, computer vision, and clean UI to create software that actually works and feels great to use.</p><p style="font-size:1.2rem;line-height:1.8;color:rgba(232,232,240,0.6);max-width:640px;">My projects span multiple domains &mdash; desktop GUI apps in C and Python, AI-powered document tools, real-time gesture controllers, face recognition security systems, and polished web games. I&#39;m always learning, always building.<br><br>When I&#39;m not coding, I&#39;m diving into Games, Anime, Manga, and anything that inspires creative thinking.</p><div class="stats-row"><div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Projects Built</div></div><div class="stat-item"><div class="stat-num">5+</div><div class="stat-label">Languages Used</div></div><div class="stat-item"><div class="stat-num">4</div><div class="stat-label">AI/ML Projects</div></div><div class="stat-item"><div class="stat-num">&#8734;</div><div class="stat-label">Ideas in Progress</div></div></div></div>', unsafe_allow_html=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)
 
@@ -587,6 +587,28 @@ st.markdown("""
                 <li>Full SQLite audit trail for auth and encryption events</li>
             </ul>
             <a href="https://github.com/Kenk26/AI-SecureVault" target="_blank" class="card-link">&#128279; View on GitHub</a>
+        </div>
+        <div class="project-card" style="--accent:#e94560">
+            <span class="project-icon">🤟</span>
+            <div class="project-title">Sign Language to Speech System</div>
+            <p class="project-desc">A real-time sign language recognition pipeline that captures hand gestures via webcam, classifies them using an LSTM model, and converts them into spoken natural English sentences with emotion-aware tone.</p>
+            <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">MediaPipe</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Ollama</span>
+                <span class="tag">PyQt5</span>
+                <span class="tag">pyttsx3</span>
+            </div>
+            <ul class="feature-list">
+                <li>Dual-hand landmark extraction (126-dim vectors) via MediaPipe Tasks API</li>
+                <li>Facial emotion detection integrated into sentence tone</li>
+                <li>LSTM classifier trained on custom-collected 30-frame gesture sequences</li>
+                <li>LLM-powered grammar correction via LangChain + Ollama (Gemma)</li>
+                <li>Full pipeline: data collection → preprocessing → training → live inference</li>
+            </ul>
+            <a href="https://github.com/Kenk26/Real-Time-Sign-Language-to-Speech-System.git" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
     </div>
 </div>
