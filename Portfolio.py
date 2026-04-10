@@ -514,21 +514,21 @@ st.markdown("""
             </ul>
             <a href="https://github.com/Kenk26/CrossWord" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
-        <div class="project-card" style="--accent:#633cff">
+        <div class="project-card" style="--accent:#7c3aed">
             <span class="project-icon">🎙️</span>
-            <div class="project-title">Voice Assistant</div>
-            <p class="project-desc">A desktop voice assistant that listens to commands and responds with natural synthesized speech.</p>
+            <div class="project-title">VoiceFlow — AI Voice Assistant</div>
+            <p class="project-desc">A local AI-powered voice assistant with a tool-calling agent loop. Speaks commands aloud, transcribes your voice, and dispatches real system actions — entirely on-device.</p>
             <div class="tag-row">
                 <span class="tag">Python</span>
-                <span class="tag">SpeechRecognition</span>
-                <span class="tag">pyttsx3</span>
+                <span class="tag">LangChain</span>
+                <span class="tag">Ollama</span>
                 <span class="tag">Tkinter</span>
             </div>
             <ul class="feature-list">
-                <li>Google STT + offline pyttsx3 TTS</li>
-                <li>Continuous &amp; single-shot listening modes</li>
-                <li>Ambient noise calibration</li>
-                <li>Female voice preference selection</li>
+                <li>Opens websites, launches apps, searches Google/YouTube via voice</li>
+                <li>Continuous or single-shot listening with noise calibration</li>
+                <li>Offline TTS via pyttsx3 with voice preference selection</li>
+                <li>Hot-swappable Ollama models at runtime</li>
             </ul>
             <a href="https://github.com/Kenk26/VoiceAssistant" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
@@ -568,6 +568,26 @@ st.markdown("""
             </ul>
             <a href="https://github.com/Kenk26/HomePage" target="_blank" class="card-link">&#128279; View on GitHub</a>
         </div>
+        <div class="project-card" style="--accent:#e94560">
+            <span class="project-icon">🛡️</span>
+            <div class="project-title">AI SecureVault</div>
+            <p class="project-desc">A desktop security app combining face recognition, liveness detection, and AES file encryption. Vault keys are derived via PBKDF2 and never stored on disk.</p>
+            <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">PyQt5</span>
+                <span class="tag">face_recognition</span>
+                <span class="tag">Cryptography</span>
+                <span class="tag">SQLite</span>
+            </div>
+            <ul class="feature-list">
+                <li>Face recognition with eye-blink liveness detection</li>
+                <li>AES-128 Fernet encryption with session-bound in-memory key</li>
+                <li>Intruder capture — unknown faces photographed and logged</li>
+                <li>bcrypt password fallback with configurable lockout</li>
+                <li>Full SQLite audit trail for auth and encryption events</li>
+            </ul>
+            <a href="https://github.com/Kenk26/AI-SecureVault" target="_blank" class="card-link">&#128279; View on GitHub</a>
+        </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -604,6 +624,8 @@ st.markdown("""
                 <span class="skill-pill">LangChain</span>
                 <span class="skill-pill">ChromaDB</span>
                 <span class="skill-pill">Ollama</span>
+                <span class="skill-pill">face_recognition</span>
+                <span class="skill-pill">dlib</span>
             </div>
         </div>
         <div class="skill-category">
@@ -613,6 +635,7 @@ st.markdown("""
                 <span class="skill-pill">GTK4</span>
                 <span class="skill-pill">Streamlit</span>
                 <span class="skill-pill">Vanilla JS</span>
+                <span class="skill-pill">PyQt5</span>
             </div>
         </div>
         <div class="skill-category">
@@ -624,6 +647,9 @@ st.markdown("""
                 <span class="skill-pill">NumPy</span>
                 <span class="skill-pill">Pickle</span>
                 <span class="skill-pill">Git</span>
+                <span class="skill-pill">bcrypt</span>
+                <span class="skill-pill">cryptography</span>
+                <span class="skill-pill">scipy</span>
             </div>
         </div>
         <div class="skill-category">
